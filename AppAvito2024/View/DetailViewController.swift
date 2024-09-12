@@ -56,6 +56,9 @@ class DetailViewController: UIViewController {
         configureButton(shareButton, title: "Share", icon: "square.and.arrow.up")
         configureButton(saveButton, title: "Save", icon: "square.and.arrow.down")
 
+        shareButton.addTarget(self, action: #selector(shareImage), for: .touchUpInside)
+        saveButton.addTarget(self, action: #selector(saveImage), for: .touchUpInside)
+
         view.addSubview(imageView)
         view.addSubview(descriptionLabel)
         view.addSubview(authorLabel)
@@ -159,3 +162,4 @@ class DetailViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }
+
